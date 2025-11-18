@@ -1,5 +1,3 @@
-# -banco_de_dados_senac
-
 ## 💊 Drogaria Santinos - Gerenciamento de Banco de Dados
 
 Este repositório contém o *schema* inicial para o banco de dados da **Drogaria Santinos**. O objetivo é gerenciar clientes, medicamentos e registrar vendas de forma eficiente.
@@ -7,6 +5,47 @@ Este repositório contém o *schema* inicial para o banco de dados da **Drogaria
 ### 📜 Conteúdo do Repositório
 
 O arquivo principal é `Drogaria Santinos.sql`, que inclui a definição das tabelas (DDL) e alguns dados iniciais (DML).
+
+---
+
+## 🧱 Conceitos Fundamentais de SQL
+
+Para entender o funcionamento e a estrutura do banco de dados, é essencial conhecer as duas categorias principais da linguagem SQL usadas em seu *script*: DDL e DML.
+
+### 🔹 DDL (Data Definition Language)
+
+**DDL** é a linguagem responsável por **definir a estrutura** (o *schema*) do banco de dados. Ela trabalha na criação, modificação e remoção dos objetos do banco.
+
+* **Comandos Principais:**
+    * `CREATE`: Cria novos objetos, como tabelas. (Exemplo: `CREATE TABLE Clientes (...)`)
+    * `ALTER`: Modifica a estrutura de um objeto já existente.
+    * `DROP`: Exclui tabelas ou outros objetos do banco de dados. (Exemplo no script: `DROP TABLE IF EXISTS Vendas;`)
+
+* **Exemplo:**
+    ```sql
+    CREATE TABLE clientes (
+        id SERIAL PRIMARY KEY,
+        nome VARCHAR(50) NOT NULL,
+        curso VARCHAR(50)
+    );
+    ```
+
+### 🔹 DML (Data Manipulation Language)
+
+**DML** permite **manipular os dados** que estão dentro da estrutura definida pelo DDL.
+
+* **Comandos Principais:**
+    * `INSERT`: Insere novos dados (linhas) na tabela. (Exemplo no script: `INSERT INTO Medicamentos (...)`)
+    * `UPDATE`: Atualiza dados existentes.
+    * `DELETE`: Remove dados (linhas) específicos da tabela.
+    * `SELECT`: Consulta e recupera dados do banco.
+
+* **Exemplo:**
+    ```sql
+    INSERT INTO clientes (nome, curso)
+    VALUES ('Maria', 'Banco de Dados');
+    ```
+---
 
 ### 🛠️ Estrutura do Banco de Dados
 
